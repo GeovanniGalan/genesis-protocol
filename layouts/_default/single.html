@@ -1,0 +1,72 @@
+{{ define "main" }}
+<article class="list-page-content">
+    <header>
+        <h1>{{ .Title }}</h1>
+        {{ with .Content }}
+        <div class="content-body">{{ . }}</div>
+        {{ end }}
+    </header>
+    {{ partial "download-button.html" . }}
+</article>
+{{ end }}
+
+{{ define "custom_head_extra" }}
+<style>
+    .list-page-content {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: left;
+        border: 1px solid var(--color-gold);
+        box-shadow: 10px 10px 0 rgba(184, 134, 11, 0.1);
+        background-color: rgba(248, 244, 233, 0.9);
+    }
+
+    .list-page-content h1 {
+        text-align: center;
+        margin-bottom: 1em;
+        border-bottom: 1px solid var(--color-gold);
+        padding-bottom: 0.5em;
+        color: var(--color-sepia);
+    }
+
+    .list-page-content h2 {
+      text-align: left;
+      margin-top: 2em;
+      margin-bottom: 1em;
+      color: var(--color-sepia);
+    }
+
+    .list-page-content .content-body p:last-child {
+        margin-bottom: 2em;
+    }
+
+    .list-page-content ul {
+        list-style-type: square;
+        margin-left: 1.5em;
+        padding: 1em;
+        background-color: rgba(248, 244, 233, 0.7);
+    }
+
+    .list-page-content li {
+        margin-bottom: 1em;
+        padding-left: 0.5em;
+    }
+
+    @media (max-width: 768px) {
+        .list-page-content {
+            padding: 15px;
+            border-width: 1px;
+            box-shadow: 5px 5px 0 rgba(184, 134, 11, 0.1);
+        }
+
+        .list-page-content h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+        }
+
+        .list-page-content li {
+            margin-bottom: 0.8em;
+        }
+    }
+</style>
+{{ end }}

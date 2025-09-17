@@ -1,0 +1,97 @@
+baseURL = "https://genesis-protocol.vercel.app/"
+languageCode = "en-us"
+title = "GENESIS PROTOCOL"
+# This project uses a custom layout, so no external theme is specified.
+
+# Required for content in Markdown to be rendered as HTML
+enableEmoji = true
+
+# Output formats for homepage (HTML and RSS/JSON for potential future use, though not actively used by current UI)
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+
+# Define custom parameters accessible via .Site.Params
+[params]
+  description = "The immutable, permanent, and lightning-fast repository for the synthesis of radical religious ethics and resource-based economic design. It is a catalyst, not a community platform."
+  author = "GENESIS PROTOCOL"
+
+# Menu configuration for the navigation bar
+[menu]
+  [[menu.main]]
+    name = "HOME"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "THE VISION"
+    url = "/vision/"
+    weight = 20
+  [[menu.main]]
+    name = "THE FALL"
+    url = "/fall/"
+    weight = 30
+  [[menu.main]]
+    name = "THE RECKONING"
+    url = "/reckoning/"
+    weight = 40
+  [[menu.main]]
+    name = "THE PATH"
+    url = "/path/"
+    weight = 50
+
+# Markup configuration (Goldmark is default markdown renderer)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Allows raw HTML in markdown, required for custom styling
+  [markup.highlight]
+    codeFences = false # Disable Hugo's built-in highlighting to avoid conflicts if custom CSS handles it
+    style = "github-dark" # Example style if code highlighting is desired later
+
+# Minify options (Hugo --minify flag handles this in production)
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  # Enable aggressive HTML minification options
+  [minify.html]
+    keepComments = false
+    keepConditionalComments = false
+    keepDefaultAttrVals = false
+    keepDocumentTags = true
+    keepEndTags = false
+    keepQuotes = false
+    keepSpecialComments = ""
+    keepWhitespace = false
+
+# Privacy settings (No tracking, no analytics)
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
+  [privacy.x]
+    disable = true
+
+# Security settings for external resources
+[security]
+  [security.exec]
+    # Allow hugo to use external programs like sass/postcss if needed
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^npm$', '^yarn$']
+    osEnv = ['(?i)^(PATH|OS|LANG|TZ)$']
+  [security.http]
+    # Allow fetching external resources for Google Fonts if not self-hosting
+    host = ['fonts.googleapis.com', 'fonts.gstatic.com']

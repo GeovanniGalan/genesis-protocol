@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    {{ partial "head-css.html" . }}
+    {{ partial "head-fonts.html" . }}
+    {{ partial "head.html" . }} {{/* General head partial for meta, etc. */}}
+    {{ block "custom_head_extra" . }} {{/* Placeholder for page-specific head content */}}
+    {{ end }}
+</head>
+<body>
+    {{ partial "header-nav.html" . }}
+    <main id="main-content">
+        {{ block "main" . }}
+        {{/* Content from single.html, list.html, index.html will go here */}}
+        {{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="{{ "/js/scroll-reveal.js" | relURL }}"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<nav id="site-navigation" class="main-navigation">
+  <div class="container">
+    <a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    <ul class="menu-list">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        <li class="menu-item">
+          <a href="{{ .URL | relURL }}" class="{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}">{{ .Name }}</a>
+        </li>
+      {{ end }}
+      <li class="menu-item download-item">
+        <a href="/genesis-protocol.pdf" class="download-button-header" download>↓ PDF ↓</a>
+      </li>
+    </ul>
+  </div>
+</nav>
