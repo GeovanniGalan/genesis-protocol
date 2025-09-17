@@ -34,7 +34,7 @@ layout: "fullscreen-centered"
 
     <p>The Final Prophecy is not that a man will return. It is that we, as a species, will finally grow up and build the world our gods have always been demanding of us.</p>
 
-    <p>This is not a new religion. It is the final, practical implementation of every old one. It is the great work of our time. It is a project for every human being—Christian, Muslim, Hindu, Buddhist, Sikh, Jew, atheist—who can look at the needless suffering of our world and say, "This is not right. We have the tools. Let's build the world that ends this."</p>
+    <p>This is not a new religion. It is the final, practical implementation of every old one. It is the great work of our time. It is a project for every human being—Christian, Muslim, Hindu, Buddhist, Sikh, Jew, atheist—who can look at the needless suffering of our world and say, "This is not right. We have the tools. Let's build the world that ends this.</p>
   {{< /core-premise >}}
 
   {{< four-revelations >}}
